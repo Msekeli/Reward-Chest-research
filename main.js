@@ -1,14 +1,24 @@
+// Select DOM elements
 const CHEST = document.querySelector('#chest');
-const OPEN_BUTTON = document.querySelector('#open-chest');
+const OPEN_CHEST_BTN = document.querySelector('#btn-open-chest');
+const AWARD = document.querySelector('.award');
 
+// Function to handle the chest opening and button disabling
 function openChest() {
-	CHEST.classList.remove('shake-chest');
-	CHEST.classList.add('open-chest');
-}
+    // Open the chest
+    CHEST.classList.remove('shake-chest');
+    CHEST.classList.add('btn-open-chest');
+    
+    // Award a random dollar amount
+    const randomDollar = (Math.random() * 9 + 1).toFixed(2);
+    AWARD.innerText = `$${randomDollar}`;
 
-function resetChest() {
-	CHEST.classList.remove('open-chest');
-	CHEST.classList.add('shake-chest');
-}
+    // Disable the button and change its style
+    OPEN_CHEST_BTN.style.backgroundColor = 'gray';
+    OPEN_CHEST_BTN.disabled = true;
 
-OPEN_BUTTON.addEventListener('click', openChest);
+    // Remove the event listener
+    OPEN_CHEST.removeEventListener('click', openChest);
+}
+// Attach the event listener to the button
+OPEN_CHEST.addEventListener('click', openChest);

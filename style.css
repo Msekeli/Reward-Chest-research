@@ -5,11 +5,11 @@ body {
 	flex-direction: column;
 	height: 100vh;
 	font-family: sans-serif;
-	background: purple;
+	background: linear-gradient(180deg, #110020 0%, #230040 100%);
 }
 
 #chest-wrap {
-	max-width: 400px;
+	max-width: 500px;
 	width: 90%;
 }
 
@@ -163,7 +163,7 @@ body {
 	}
 
 	.cls-10 {
-		fill: #ffe30a;
+		fill: #ffca06;
 	}
 
 	.cls-11 {
@@ -251,29 +251,29 @@ body {
 #chest {
 	&.shake-chest {
 		#chest-lock {
-			animation: shakeChestTop 1.2s infinite ease;
+			animation: shakeChestTop 1s infinite ease;
 		}
 
 		#chest-bottom {
-			animation: shakeChestBottom 1.2s infinite ease;
+			animation: shakeChestBottom 1s infinite ease;
 		}
 
 		#chest-top {
-			animation: shakeChestTop 1.2s infinite ease;
+			animation: shakeChestTop 1s infinite ease;
 		}
 		
 		#chest-sparkles {
-			animation: shakeChestTop 1.2s infinite ease;
+			animation: shakeChestTop 1s infinite ease;
 		}
 	}
 	
-	&.open-chest {
+	&.btn-open-chest {
 		#chest-lock {
-			animation: openLock 3s ease forwards;
+			animation: openLock 2s ease forwards;
 		}
 		
 		#chest-top {
-			animation: openChestTop 3s ease forwards;
+			animation: openChestTop 2s ease forwards;
 		}
 
 		#chest-sparkles {
@@ -300,24 +300,23 @@ body {
 	}
 }
 
-#open-chest {
-	background: #D8127D;
-	color: #FFF101;
+#btn-open-chest {
+	background-color: #bd0aff;
+	color: #fff;
+	font-weight: bold;
 	padding: 15px 40px;
-	font-weight: 700;
 	border-radius: 5px;
 	text-transform: uppercase;
 	letter-spacing: 1.5px;
-	user-select: none;
 	cursor: pointer;
+	transition: background-color 0.3s ease;
 }
 
-#reset-chest {
-	color: #FFF101;
-	font-weight: 500;
-	margin-top: 20px;
-	cursor: pointer;
+#btn-open-chest:hover {
+	background-color: #7f06ab;
+	color: #fff;
 }
+
 
 @keyframes fadeIn {
 	from { opacity: 0; }
@@ -360,9 +359,9 @@ body {
     font-size: 40px;
     position: absolute;
     z-index: -1;
-    color: #f9ed24;
+    color: white;
     font-weight: bolder;
     left: 47%;
-    top: 39%;
+    top: 40%;
 }
 
