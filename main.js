@@ -5,10 +5,8 @@ const AWARD = document.querySelector('.award');
 
 // Function to handle the chest opening and button disabling
 function openChest() {
-    // Open the chest
     CHEST.classList.remove('shake-chest');
-    CHEST.classList.add('btn-open-chest');
-    
+    CHEST.classList.add('btn-open-chest');   
     // Award a random dollar amount
     const randomDollar = (Math.random() * 9 + 1).toFixed(2);
     AWARD.innerText = `$${randomDollar}`;
@@ -16,9 +14,8 @@ function openChest() {
     // Disable the button and change its style
     OPEN_CHEST_BTN.style.backgroundColor = 'gray';
     OPEN_CHEST_BTN.disabled = true;
-
     // Remove the event listener
-    OPEN_CHEST.removeEventListener('click', openChest);
+    OPEN_CHEST_BTN.removeEventListener('click', openChest);
 }
 // Attach the event listener to the button
-OPEN_CHEST.addEventListener('click', openChest);
+OPEN_CHEST_BTN.addEventListener('click', openChest);
